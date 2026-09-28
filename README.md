@@ -142,3 +142,17 @@ The OLED Display (128×64) provides real-time information about the system, such
                                  ▼
                             OLED Display
                               (128×64)
+
+```
+---
+
+## Future scope 
+* Larger solar panels for higher-capacity applications.
+* Scalable outdoor deployment for real-world solar installations.
+
+---
+
+## 👩‍💻 Author
+
+* Debolina Sen
+* Sagnik Moitra
