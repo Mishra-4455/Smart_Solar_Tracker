@@ -95,7 +95,6 @@ The OLED Display (128×64) provides real-time information about the system, such
 - Servo position
 - Rain status
 - Wind status
-- Protection status
 
 ---
 
