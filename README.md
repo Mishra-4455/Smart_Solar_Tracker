@@ -86,14 +86,6 @@ If one side receives more light than another, the Arduino commands the servo mot
 
 This process is repeated continuously so that the panel can adapt to the changing position of the sun.
 
-### 🌧️ 2. Protection System
-
-The raindrop sensor monitors the surrounding weather condition.
-
-When rain is detected, the Arduino identifies the rain condition and activates the programmed protection response for the solar panel.
-
-This helps the system respond to changing environmental conditions instead of only tracking sunlight.
-
 ### 📟 3. OLED Monitoring
 
 The OLED Display (128×64) provides real-time information about the system, such as:
@@ -102,6 +94,7 @@ The OLED Display (128×64) provides real-time information about the system, such
 - Tracking status
 - Servo position
 - Rain status
+- Wind status
 - Protection status
 
 ---
