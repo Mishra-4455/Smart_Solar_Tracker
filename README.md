@@ -67,15 +67,16 @@ The complete system is initially developed and tested through **Wokwi simulation
 
 ## 🧰 Components Used
 
-| Component | Quantity | Purpose |
-|-----------|----------|---------|
-| Arduino Mega 2560 | 1 | Main controller |
-| LDR | 4 | Detect sunlight intensity and direction |
-| Servo Motor | 1 | Adjust solar panel position |
-| OLED Display (128×64) | 1 | Display system status |
-| Solar Panel | 1 | Solar energy generation |
-| Raindrop Sensor | 1 | Detect rainfall |
-| Jumper Wires | As required | Circuit connections |
+| Component             | Quantity    | Purpose                                 |
+| --------------------- | ----------- | --------------------------------------- |
+| Arduino Mega 2560     | 1           | Main controller                         |
+| LDR                   | 4           | Detect sunlight intensity and direction |
+| Servo Motor           | 1           | Adjust solar panel position             |
+| OLED Display (128×64) | 1           | Display system status                   |
+| Solar Panel           | 1           | Solar energy generation                 |
+| Raindrop Sensor       | 1           | Detect rainfall                         |
+| Pulse Sensor + magnet | 1           | Detect wind conditions                  |
+| Jumper Wires          | As required | Circuit connections                     |
 
 ---
 
@@ -107,8 +108,7 @@ The OLED Display (128×64) provides real-time information about the system, such
 
 ## 🔄 System Working Flow
 
-```text
-                 ☀️ SUNLIGHT
+☀️ SUNLIGHT
                       │
                       ▼
               ┌───────────────┐
@@ -116,34 +116,27 @@ The OLED Display (128×64) provides real-time information about the system, such
               │ Light Sensors │
               └───────┬───────┘
                       │
-                      │ LDR Readings
                       ▼
               ┌───────────────┐
               │ Arduino Mega  │
-              │    2560       │
+              │     2560      │
               └───────┬───────┘
                       │
-             ┌────────┴────────┐
-             │                 │
-             ▼                 ▼
-     ┌──────────────┐   ┌───────────────┐
-     │ Solar        │   │ Rain Detection│
-     │ Tracking     │   │   System      │
-     └──────┬───────┘   └───────┬───────┘
-            │                   │
-            ▼                   ▼
-     ┌──────────────┐    ┌──────────────┐
-     │ Servo Motor  │    │ Protection   │
-     │ Control      │    │ Response     │
-     └──────┬───────┘    └──────────────┘
-            │
-            ▼
-     ┌──────────────┐
-     │ Solar Panel  │
-     │ Orientation  │
-     └──────────────┘
-
-              ┌────────────────┐
-              │ OLED Display   │
-              │    (128×64)    │
-              └────────────────┘
+             ┌────────┴─────────┐
+             │                  │
+             ▼                  ▼
+      Solar Tracking      Environmental
+             │               Monitoring
+             ▼                  │
+       Servo Motor       ┌──────┴───────┐
+             │           │              │
+             ▼           ▼              ▼
+       Solar Panel   🌧️ Rain Sensor  💨 Wind Sensor
+       Positioning        │              │
+                          └──────┬───────┘
+                                 ▼
+                         Protection Response
+                                 │
+                                 ▼
+                         OLED Display
+                           (128×64)
