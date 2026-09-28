@@ -57,3 +57,94 @@ The complete system is initially developed and tested through **Wokwi simulation
   - The system is designed and tested using Wokwi before physical implementation.
 
 ---
+
+## 🧰 Components Used
+
+| Component | Quantity | Purpose |
+|-----------|----------|---------|
+| Arduino Mega 2560 | 1 | Main controller |
+| LDR | 4 | Detect sunlight intensity and direction |
+| Servo Motor | 1 | Adjust solar panel position |
+| OLED Display (128×64) | 1 | Display system status |
+| Solar Panel | 1 | Solar energy generation |
+| Raindrop Sensor | 1 | Detect rainfall |
+| Jumper Wires | As required | Circuit connections |
+
+---
+
+## ⚙️ Working Principle
+
+The system operates through two main sections:
+
+### 🌞 1. Solar Tracking System
+
+Four LDR sensors are positioned around the solar panel.
+
+Each LDR measures the intensity of light falling on it. The Arduino Mega 2560 continuously reads these values and compares the light intensity between different directions.
+
+If one side receives more light than another, the Arduino commands the servo motor to adjust the solar panel toward the brighter direction.
+
+This process is repeated continuously so that the panel can adapt to the changing position of the sun.
+
+### 🌧️ 2. Protection System
+
+The raindrop sensor monitors the surrounding weather condition.
+
+When rain is detected, the Arduino identifies the rain condition and activates the programmed protection response for the solar panel.
+
+This helps the system respond to changing environmental conditions instead of only tracking sunlight.
+
+### 📟 3. OLED Monitoring
+
+The OLED Display (128×64) provides real-time information about the system, such as:
+
+- LDR sensor readings
+- Tracking status
+- Servo position
+- Rain status
+- Protection status
+
+---
+
+## 🔄 System Working Flow
+
+```text
+                 ☀️ SUNLIGHT
+                      │
+                      ▼
+              ┌───────────────┐
+              │    4 × LDR    │
+              │ Light Sensors │
+              └───────┬───────┘
+                      │
+                      │ LDR Readings
+                      ▼
+              ┌───────────────┐
+              │ Arduino Mega  │
+              │    2560       │
+              └───────┬───────┘
+                      │
+             ┌────────┴────────┐
+             │                 │
+             ▼                 ▼
+     ┌──────────────┐   ┌───────────────┐
+     │ Solar        │   │ Rain Detection│
+     │ Tracking     │   │   System      │
+     └──────┬───────┘   └───────┬───────┘
+            │                   │
+            ▼                   ▼
+     ┌──────────────┐    ┌──────────────┐
+     │ Servo Motor  │    │ Protection   │
+     │ Control      │    │ Response     │
+     └──────┬───────┘    └──────────────┘
+            │
+            ▼
+     ┌──────────────┐
+     │ Solar Panel  │
+     │ Orientation  │
+     └──────────────┘
+
+              ┌────────────────┐
+              │ OLED Display   │
+              │    (128×64)    │
+              └────────────────┘
