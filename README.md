@@ -72,6 +72,7 @@ The complete system is initially developed and tested through **Wokwi simulation
 
 ---
 
+
 ## ⚙️ Working Principle
 
 The system operates through two main sections:
@@ -101,8 +102,7 @@ The OLED Display (128×64) provides real-time information about the system, such
 
 ## 🔄 System Working Flow
 
-```text
-                 ☀️ SUNLIGHT
+☀️ SUNLIGHT
                       │
                       ▼
               ┌───────────────┐
@@ -110,34 +110,27 @@ The OLED Display (128×64) provides real-time information about the system, such
               │ Light Sensors │
               └───────┬───────┘
                       │
-                      │ LDR Readings
                       ▼
               ┌───────────────┐
               │ Arduino Mega  │
-              │    2560       │
+              │     2560      │
               └───────┬───────┘
                       │
-             ┌────────┴────────┐
-             │                 │
-             ▼                 ▼
-     ┌──────────────┐   ┌───────────────┐
-     │ Solar        │   │ Rain Detection│
-     │ Tracking     │   │   System      │
-     └──────┬───────┘   └───────┬───────┘
-            │                   │
-            ▼                   ▼
-     ┌──────────────┐    ┌──────────────┐
-     │ Servo Motor  │    │ Protection   │
-     │ Control      │    │ Response     │
-     └──────┬───────┘    └──────────────┘
-            │
-            ▼
-     ┌──────────────┐
-     │ Solar Panel  │
-     │ Orientation  │
-     └──────────────┘
-
-              ┌────────────────┐
-              │ OLED Display   │
-              │    (128×64)    │
-              └────────────────┘
+             ┌────────┴─────────┐
+             │                  │
+             ▼                  ▼
+      Solar Tracking      Environmental
+             │               Monitoring
+             ▼                  │
+       Servo Motor       ┌──────┴───────┐
+             │           │              │
+             ▼           ▼              ▼
+       Solar Panel   🌧️ Rain Sensor  💨 Wind Sensor
+       Positioning        │              │
+                          └──────┬───────┘
+                                 ▼
+                         Protection Response
+                                 │
+                                 ▼
+                         OLED Display
+                           (128×64)
