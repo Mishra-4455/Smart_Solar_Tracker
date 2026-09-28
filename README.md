@@ -16,8 +16,8 @@ The complete system is initially developed and tested through **Wokwi simulation
 
 ## 🔗 Project Links
 
-- 🧪 **Wokwi Simulation:** [View the Project on Wokwi]([https://wokwi.com/projects/123456789](https://wokwi.com/projects/476301470495118337))
-- 🎥 **YouTube Demo:** [Watch the Demo Video]([https://youtu.be/abcdef12345](https://youtu.be/msvI3rhKXHA?si=rDYbkZhUvd6Ia_zd))
+- 🧪 **Wokwi Simulation:** [View the Project on Wokwi](https://wokwi.com/projects/476301470495118337)
+- 🎥 **YouTube Demo:** [Watch the Demo Video](https://youtu.be/msvI3rhKXHA?si=rDYbkZhUvd6Ia_zd)
 
 ---
 
