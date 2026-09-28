@@ -86,7 +86,7 @@ If one side receives more light than another, the Arduino commands the servo mot
 
 This process is repeated continuously so that the panel can adapt to the changing position of the sun.
 
-### 📟 3. OLED Monitoring
+### 📟 2. OLED Monitoring
 
 The OLED Display (128×64) provides real-time information about the system, such as:
 
