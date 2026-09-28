@@ -108,7 +108,9 @@ The OLED Display (128×64) provides real-time information about the system, such
 
 ## 🔄 System Working Flow
 
-☀️ SUNLIGHT
+```text
+
+                ☀️ SUNLIGHT
                       │
                       ▼
               ┌───────────────┐
@@ -138,5 +140,5 @@ The OLED Display (128×64) provides real-time information about the system, such
                          Protection Response
                                  │
                                  ▼
-                         OLED Display
-                           (128×64)
+                            OLED Display
+                              (128×64)
